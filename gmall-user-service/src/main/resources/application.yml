@@ -6,4 +6,4 @@ spring:
         password: '123456'
 mapper:
   identity: MYSQL
-#  mappers: com.atguigu.gmall.user.test.TestMapper
+  mappers: com.ljx.gmall.user.basemapper.BaseMapper
