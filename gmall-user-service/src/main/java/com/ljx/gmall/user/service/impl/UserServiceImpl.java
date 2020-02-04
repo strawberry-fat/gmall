@@ -7,8 +7,8 @@ import com.ljx.gmall.service.UserService;
 import com.ljx.gmall.user.mapper.UmsMemberReceiveAddressMapper;
 import com.ljx.gmall.user.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import java.util.List;
 
+import java.util.List;
 
 
 @Service
@@ -26,6 +26,7 @@ public class UserServiceImpl implements UserService {
         List<UmsMember> umsMembers = userMapper.selectAll();
         return umsMembers;
     }
+
     //根据Menmberid查询收货地址
     @Override
     public List<UmsMemberReceiveAddress> getReceiveAddressByMemberId(String memberId) {
@@ -34,36 +35,43 @@ public class UserServiceImpl implements UserService {
         List<UmsMemberReceiveAddress> receiveAddresses = umsMemberReceiveAddressMapper.select(umsMemberReceiveAddress);
         return receiveAddresses;
     }
+
     //更新用户
     @Override
     public void updateUser(UmsMember umsMember) {
         userMapper.updateByPrimaryKey(umsMember);
     }
+
     //增加用户
     @Override
     public void addUser(UmsMember umsMember) {
         userMapper.insert(umsMember);
     }
+
     //删除用户根据ID
     @Override
     public void deleteUser(String memberId) {
         userMapper.deleteByPrimaryKey(memberId);
     }
+
     //增加收货地址
     @Override
     public void addUmsMemberReceiveAddress(UmsMemberReceiveAddress umsMemberReceiveAddress) {
         umsMemberReceiveAddressMapper.insert(umsMemberReceiveAddress);
     }
+
     //更新收货地址
     @Override
     public void updateUmsMemberReceiveAddress(UmsMemberReceiveAddress umsMemberReceiveAddress) {
         umsMemberReceiveAddressMapper.updateByPrimaryKey(umsMemberReceiveAddress);
     }
+
     //根据收货地址id删除收货地址
     @Override
     public void deleteUmsMemberReceiveAddress(String id) {
         umsMemberReceiveAddressMapper.deleteByPrimaryKey(id);
     }
+
     //根据用户id获取用户
     @Override
     public UmsMember getUser(String id) {
