@@ -2,6 +2,7 @@ package com.ljx.gmall.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -9,11 +10,11 @@ import java.util.Date;
  * @param
  * @return
  */
-public class PaymentInfo {
+public class PaymentInfo implements Serializable {
 
     @Column
     @Id
-    private String  id;
+    private String id;
 
     @Column
     private String outTradeNo;

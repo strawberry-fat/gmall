@@ -25,5 +25,6 @@ public interface UserService {
     void deleteUmsMemberReceiveAddress(String id);
 
     UmsMember getUser(String id);
+
     UmsMemberReceiveAddress getReceiveAddressById(String id);
 }
